@@ -9,11 +9,17 @@ API REST de calculatrice en Java pur (sans framework), conversion du projet [cal
 
 ## Lancer le serveur
 
-Exécuter `Server.main()` depuis IntelliJ, puis :
+```powershell
+.\run.bat
+```
+
+Ou depuis IntelliJ : exécuter `Server.main()`.
 
 ```
 http://localhost:3000/calculate?operation=add&a=5&b=3
 ```
+
+> Le script compile puis démarre le serveur via le JDK `openjdk-25` embarqué par IntelliJ.
 
 ## Endpoint
 
