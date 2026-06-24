@@ -1,6 +1,6 @@
 package test.java.com.calculator;
 import junit.framework.TestCase;
-import main.java.core.calculator.Calculator;
+import core.calculator.Calculator;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

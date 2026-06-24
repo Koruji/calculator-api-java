@@ -1,0 +1,41 @@
+name: CI — Tests & Couverture
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    name: Tests Java (JDK ${{ matrix.java-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java-version: ["17"]
+    steps:
+      - uses: actions/checkout@v5
+      
+      - name: Setup JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java-version }}
+          distribution: 'temurin'
+          cache: 'maven'
+      
+      - name: Compile le code
+        run: |
+          mkdir -p out
+          javac -d out src/main/java/core/calculator/*.java
+      
+      - name: Télécharger JUnit Platform Console Standalone
+        run: |
+          wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.9.2/junit-platform-console-standalone-1.9.2.jar -O junit.jar
+      
+      - name: Compiler les tests
+        run: |
+          javac -cp out:junit.jar -d out src/test/java/com/calculator/*.java
+      
+      - name: Exécuter les tests JUnit
+        run: java -jar junit.jar --class-path out --scan-class-path --fail-if-no-tests

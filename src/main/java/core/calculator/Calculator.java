@@ -1,4 +1,4 @@
-package main.java.core.calculator;
+package core.calculator;
 
 public class Calculator {
     public static double add(double a, double b) {
