@@ -1,0 +1,20 @@
+# IDE
+.idea/
+*.iml
+
+# Git
+.git/
+.gitignore
+
+# Build outputs
+out/
+*.class
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Local files
+run.bat

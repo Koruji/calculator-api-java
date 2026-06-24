@@ -1,4 +1,4 @@
-package main.java.core.calculator;
+package core.calculator;
 
 import com.sun.net.httpserver.HttpServer;
 
@@ -15,8 +15,12 @@ public class Server {
     }
 
     public static void main(String[] args) throws IOException {
-        HttpServer server = createServer(3000);
+        int port = 3000;
+        if (args.length > 0) {
+            port = Integer.parseInt(args[0]);
+        }
+        HttpServer server = createServer(port);
         server.start();
-        System.out.println("Serveur démarré sur http://localhost:3000");
+        System.out.println("Serveur démarré sur http://localhost:" + port);
     }
 }

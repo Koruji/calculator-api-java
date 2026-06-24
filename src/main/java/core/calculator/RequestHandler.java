@@ -1,4 +1,4 @@
-package main.java.core.calculator;
+package core.calculator;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;

@@ -1,7 +1,7 @@
 package test.java.com.calculator;
 
 import com.sun.net.httpserver.HttpServer;
-import main.java.core.calculator.Server;
+import core.calculator.Server;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
