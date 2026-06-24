@@ -22,7 +22,6 @@ jobs:
         with:
           java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
-          cache: 'maven'
       
       - name: Compile le code
         run: |
